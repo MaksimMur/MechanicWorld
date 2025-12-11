@@ -3182,7 +3182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84eb5d1d6b9e42740b708789c0265677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shader: {fileID: 4800000, guid: 3e1df5e70615253449cebcd68e970010, type: 3}
+  _shader: {fileID: 4800000, guid: c4a7a5963b56b174996d88abc511b085, type: 3}
 --- !u!114 &403292181
 MonoBehaviour:
   m_ObjectHideFlags: 0
