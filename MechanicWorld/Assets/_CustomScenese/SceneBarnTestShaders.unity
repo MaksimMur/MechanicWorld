@@ -3037,6 +3037,7 @@ GameObject:
   - component: {fileID: 403292182}
   - component: {fileID: 403292181}
   - component: {fileID: 403292180}
+  - component: {fileID: 403292183}
   m_Layer: 0
   m_Name: _Camera_Barn
   m_TagString: MainCamera
@@ -3136,7 +3137,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 200
+  far clip plane: 100
   field of view: 55
   orthographic: 0
   orthographic size: 9.9
@@ -3177,12 +3178,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403292169}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84eb5d1d6b9e42740b708789c0265677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shader: {fileID: 4800000, guid: c4a7a5963b56b174996d88abc511b085, type: 3}
+  _shader: {fileID: 4800000, guid: 15cef216a6c82c94ca5be58c5f7b1aaf, type: 3}
 --- !u!114 &403292181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3213,6 +3214,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &403292183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403292169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440a5f6c67c117a4cbd7adb52bdb2fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shader: {fileID: 4800000, guid: da08808c8ca824546944a363089f6801, type: 3}
+  _nearColor: {r: 1, g: 1, b: 1, a: 1}
+  _farColor: {r: 0, g: 0.035075463, b: 0.9372549, a: 0.44705883}
 --- !u!1001 &410435231
 PrefabInstance:
   m_ObjectHideFlags: 0
