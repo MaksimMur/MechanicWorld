@@ -71,14 +71,13 @@ Shader "Hidden/EdgeDetectionFilter"
                 y+= getLum(uv, float2(            0, _texelSize.y), 2.0);
                 y+= getLum(uv, float2( _texelSize.x, _texelSize.y), 1.0);
 
-                return sqrt(x*x +y*y);
+                return sqrt(x*x + y*y);
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed3 s = sobel(i.uv);
                 return fixed4(s, 1.0);
-                
             }
             ENDCG
         }
