@@ -1,9 +1,9 @@
-Shader "Hidden/FogFilter"
+Shader "Hidden/BoxBlurFilter"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _FarColor("Far color", Color) = (1, 1, 1, 1)
+        _Kernel ("Kernel (N)", int) = 21
     }
     SubShader
     {
@@ -39,16 +39,31 @@ Shader "Hidden/FogFilter"
             }
 
             sampler2D _MainTex;
-            sampler2D _CameraDepthTexture;
-            fixed4 _FarColor;
+            int _Kernel;
+            float2 _MainTex_TexelSize;
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 colTex = tex2D(_MainTex, i.uv);
-                fixed4 col = tex2D(_CameraDepthTexture, i.uv);
-                float depth = UNITY_SAMPLE_DEPTH(col);
-                depth = Linear01Depth(depth);
-                return lerp(colTex,_FarColor, depth);
+                fixed originAlpha = tex2D(_MainTex, i.uv).a;
+                // переменная хранящая трехканальную информацию
+                fixed3 col = fixed3(0.0,0.0,0.0);
+                
+                //границы для средневзвешенного значения
+                int upper = ((_Kernel-1))/2;
+                int lower = -upper;
+
+                for(int x = lower; x<= upper;++x)
+                {
+                    for(int y = lower; y<= upper;++y)
+                    {
+                        fixed2 offset = fixed2(_MainTex_TexelSize.x*x,_MainTex_TexelSize.y);    
+                        col+= tex2D(_MainTex, i.uv+offset);
+                    }
+                }
+                
+                col /=(_Kernel*_Kernel);
+                return fixed4(col, originAlpha);
+                
             }
             ENDCG
         }
