@@ -1464,9 +1464,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e97295cddfdc643b93cbada31cc529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _averageLabel: {fileID: 0}
-  _highestLabel: {fileID: 0}
-  _lowestLabel: {fileID: 0}
+  _averageLabel: {fileID: 1156911539}
+  _highestLabel: {fileID: 1614174174}
+  _lowestLabel: {fileID: 1994805655}
+  _fpsColors:
+  - Color: {r: 0, g: 1, b: 0.9548309, a: 1}
+    MinFps: 60
+  - Color: {r: 0, g: 1, b: 0.023376703, a: 1}
+    MinFps: 45
+  - Color: {r: 0.9451812, g: 1, b: 0.042452812, a: 1}
+    MinFps: 30
+  - Color: {r: 1, g: 0.5589783, b: 0, a: 1}
+    MinFps: 15
+  - Color: {r: 1, g: 0, b: 0, a: 1}
+    MinFps: 0
 --- !u!114 &130458826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3151,6 +3162,7 @@ GameObject:
   - component: {fileID: 403292185}
   - component: {fileID: 403292186}
   - component: {fileID: 403292187}
+  - component: {fileID: 403292188}
   m_Layer: 0
   m_Name: _Camera_Barn
   m_TagString: MainCamera
@@ -3391,7 +3403,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403292169}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3feeed8e92e38346b6046af5e6999d1, type: 3}
   m_Name: 
@@ -3400,6 +3412,18 @@ MonoBehaviour:
   _xTileCount: 100
   _overlayTexture: {fileID: 2800000, guid: 75adddb7c4eaae044acf8b99f21a3167, type: 3}
   _overlayColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &403292188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403292169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0e6d74e76418d4ca9c1753e40d45a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &410435231
 PrefabInstance:
   m_ObjectHideFlags: 0
