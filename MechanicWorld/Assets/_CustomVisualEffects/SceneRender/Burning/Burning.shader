@@ -94,7 +94,7 @@ Shader "Hidden/Burning"
                 float offset = uv.x + uv.y *0.5;
                 float d = Fbm(uv) + _BurningTime + offset;
 
-                float d1 = 0.35;
+                float d1 = 0.35;// move to const
                 float3 col = d > d1 ? fixed3(0,0,0) : src;
 
                 float w12 =0.12;// black width
